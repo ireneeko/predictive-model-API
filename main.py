@@ -12,8 +12,8 @@ def read_root():
 
 @app.post("/predict/{input}")
 @app.get("/predict/{input}")
-def prediction_output(input: str):
+def predict(input: str):
     item_id = model.predict([[float(input)]])
     return {"prediction": float(item_id[0])}
 
-# print(prediction_output('4.2'))
+# print(predict('4.2'))
